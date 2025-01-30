@@ -1,0 +1,348 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e1e2e, #3a3a5e);
+    margin: 0;
+}
+
+.container {
+    background: #222;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 
+                -5px -5px 15px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+}
+
+h1 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1.2px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 85%;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: #00ffcc;
+    text-align: center;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.3),
+                inset -3px -3px 10px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:hover {
+    box-shadow: inset 5px 5px 12px rgba(0, 0, 0, 0.5),
+                inset -5px -5px 12px rgba(255, 255, 255, 0.1);
+}
+
+button {
+    margin-top: 12px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #404040, #2a2a2a);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3),
+                -3px -3px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #525252, #1e1e1e);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.slider-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="range"] {
+    width: 80%;
+    appearance: none;
+    height: 6px;
+    background: #444;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #00ffcc;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px rgba(0, 255, 204, 0.8);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #00ffcc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.length-display {
+    font-size: 20px;
+    font-weight: 600;
+    color: #00ffcc;
+    background: #222;
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: inline-block;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3),
+                -3px -3px 10px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.length-display:hover {
+    background: #333;
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+@layer demo {
+    .highlighted-text-shadow {
+      text-shadow:
+        0 .15ch 15px var(--shadow),
+        0 -2px 0 var(--highlight);
+    }
+}
+
+@layer demo.support {
+    :root {
+      --hue: 320;
+      --text: oklch(85% .1 var(--hue));
+      --shadow: oklch(25% .2 var(--hue)); 
+      --highlight: oklch(98% .05 var(--hue)); 
+    }
+
+    * {
+      font-family: system-ui, sans-serif;
+    }
+
+    html {
+      color: var(--text);
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      display: grid;
+      place-content: center;
+      gap: 10vh;
+    }
+    
+    h1 {
+      font-size: 15vi;
+      letter-spacing: -.15ch;
+      line-height: .75;
+      text-shadow: 0 .15ch 15px var(--shadow), 0 -2px 0 var(--highlight);
+    }
+
+    small {
+      max-inline-size: 30ch;
+    }
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 14px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    background: #333;
+    color: #00ffcc;
+    text-align: center;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.3),
+                inset -3px -3px 10px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(0, 255, 204, 1), inset 3px 3px 10px rgba(0, 0, 0, 0.5),
+                inset -3px -3px 10px rgba(255, 255, 255, 0.2);
+    background: #444;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+input.display {
+    width: 90%;
+    padding: 14px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    background: #333;
+    color: #00ffcc;
+    text-align: center;
+    cursor: not-allowed;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.3),
+                inset -3px -3px 10px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e1e2e, #3a3a5e);
+    margin: 0;
+}
+
+.container {
+    background: #222;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 
+                -5px -5px 15px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 14px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    background: #333;
+    color: #00ffcc;
+    text-align: center;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.3),
+                inset -3px -3px 10px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(0, 255, 204, 1), inset 3px 3px 10px rgba(0, 0, 0, 0.5),
+                inset -3px -3px 10px rgba(255, 255, 255, 0.2);
+    background: #444;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+input.display {
+    width: 90%;
+    padding: 14px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    background: #333;
+    color: #00ffcc;
+    text-align: center;
+    cursor: not-allowed;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.3),
+                inset -3px -3px 10px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Checkboxes Container */
+div {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* Checkbox Input */
+input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #00ffcc;
+    border-radius: 6px;
+    background-color: #222;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Checkbox Input Checked State */
+input[type="checkbox"]:checked {
+    background-color: #00ffcc;
+    border-color: #00ffcc;
+}
+
+input[type="checkbox"]:checked::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #222;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+}
+
+/* Checkbox Hover Effect */
+input[type="checkbox"]:hover {
+    border-color: #00ffcc;
+    box-shadow: 0px 0px 8px rgba(0, 255, 204, 0.8);
+}
+
+/* Checkbox Label */
+label {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+input[type="checkbox"]:hover + label {
+    color: #00ffcc; /* Highlight label color on hover */
+}
+
+input[type="checkbox"]:checked + label {
+    color: #00ffcc; /* Change label color when checkbox is checked */
+}
